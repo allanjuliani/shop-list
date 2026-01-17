@@ -1,0 +1,13 @@
+{
+  "name": "Shop List",
+  "short_name": "Shop List",
+  "theme_color": "#09090b",
+  "background_color": "#09090b",
+  "start_url": "https://allanjuliani.github.io/shop-list/",
+  "display": "standalone",
+  "icons": [{
+    "src": "/shop-list/logo.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}
