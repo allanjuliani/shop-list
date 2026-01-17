@@ -1,16 +1,38 @@
 
   <!DOCTYPE html>
   <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-      <title>Shop List</title>
-      <link rel="manifest" href="/manifest.json">
-      <link rel="icon" type="image/x-icon" href="icon.png">
-    </head>
+    <link rel="icon" type="image/x-icon" href="icon.png">
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
+    <!-- iOS safe area -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <title>Shop List</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#09090b" />
+
+    <!-- iOS PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <!-- iOS icon -->
+    <link
+      rel="apple-touch-icon"
+      href="/shop-list/logo.png"
+    />
+  </head>
+
+  <body class="bg-zinc-950">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
