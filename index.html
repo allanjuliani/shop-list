@@ -1,20 +1,38 @@
 
   <!DOCTYPE html>
   <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-      <title>Shop List</title>
-      <link rel="manifest" href="/shop-list/assets/manifest-D6Iw9yVQ.json">
-      <link rel="icon" type="image/x-icon" href="icon.png">
-      <meta name="theme-color" content="#09090b">
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-      <script type="module" crossorigin src="/shop-list/assets/index-BbtSMfk9.js"></script>
-      <link rel="stylesheet" crossorigin href="/shop-list/assets/index-DO-k8gCe.css">
-    </head>
 
-    <body>
-      <div id="root"></div>
-    </body>
-  </html>
+    <!-- iOS safe area -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <title>Shop List</title>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/shop-list/assets/manifest-D6Iw9yVQ.json" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#09090b" />
+
+    <!-- iOS PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <!-- iOS icon -->
+    <link
+      rel="apple-touch-icon"
+      href="/shop-list/logo.png"
+    />
+    <script type="module" crossorigin src="/shop-list/assets/index-BbtSMfk9.js"></script>
+    <link rel="stylesheet" crossorigin href="/shop-list/assets/index-DO-k8gCe.css">
+  </head>
+
+  <body class="bg-zinc-900 pt-[env(safe-area-inset-top)]">
+    <div id="root"></div>
+  </body>
+</html>
