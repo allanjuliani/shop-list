@@ -1,41 +1,15 @@
-import { useState, useEffect } from "react";
 import { Calendar, Trash2, ShoppingBag } from "lucide-react";
-
-interface HistoryItem {
-  id: number;
-  name: string;
-  emoji: string;
-  addedAt: string;
-  purchasedAt: string;
-}
-
-const loadHistory = (): HistoryItem[] => {
-  const saved = localStorage.getItem("shoppingHistory");
-  if (!saved) return [];
-
-  const parsed = JSON.parse(saved);
-
-  return parsed.sort(
-    (a: HistoryItem, b: HistoryItem) =>
-      new Date(b.purchasedAt).getTime() - new Date(a.purchasedAt).getTime(),
-  );
-};
+import { useShoppingHistory } from "../hooks/useShoppingHistory";
+import type { HistoryItem } from "../storage";
 
 export function ShoppingHistory() {
-  // ✅ Inicialização correta (sem effect)
-  const [history, setHistory] = useState<HistoryItem[]>(loadHistory);
+  const { history, clearHistory, removeItem } = useShoppingHistory();
 
-  // ✅ Sincronizar quando localStorage mudar (outra aba)
-  useEffect(() => {
-    const handleStorage = (event: StorageEvent) => {
-      if (event.key === "shoppingHistory") {
-        setHistory(loadHistory());
-      }
-    };
-
-    window.addEventListener("storage", handleStorage);
-    return () => window.removeEventListener("storage", handleStorage);
-  }, []);
+  const handleClearHistory = () => {
+    if (window.confirm("Deseja realmente limpar todo o histórico?")) {
+      clearHistory();
+    }
+  };
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -61,19 +35,6 @@ export function ShoppingHistory() {
         minute: "2-digit",
       });
     }
-  };
-
-  const clearHistory = () => {
-    if (window.confirm("Deseja realmente limpar todo o histórico?")) {
-      localStorage.setItem("shoppingHistory", JSON.stringify([]));
-      setHistory([]);
-    }
-  };
-
-  const removeItem = (id: number) => {
-    const newHistory = history.filter((item) => item.id !== id);
-    localStorage.setItem("shoppingHistory", JSON.stringify(newHistory));
-    setHistory(newHistory);
   };
 
   // Agrupar por data
@@ -109,7 +70,7 @@ export function ShoppingHistory() {
           </div>
 
           <button
-            onClick={clearHistory}
+            onClick={handleClearHistory}
             className="text-sm text-red-400 hover:text-red-300 transition-colors flex items-center gap-2"
           >
             <Trash2 size={16} />

@@ -20,25 +20,33 @@ export default function App() {
           </h1>
 
           {/* Tabs */}
-          <div className="flex gap-2 bg-zinc-900 p-1 rounded-lg">
+          <div
+            className="flex gap-2 bg-zinc-900 p-1 rounded-lg"
+            role="tablist"
+            aria-label="Navegação da lista"
+          >
             <button
               onClick={() => setActiveTab("list")}
-              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all ${
-                activeTab === "list"
+              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all ${activeTab === "list"
                   ? "bg-emerald-600 text-white shadow-lg"
                   : "text-zinc-400 hover:text-zinc-300"
-              }`}
+                }`}
+              role="tab"
+              aria-pressed={activeTab === "list"}
+              aria-selected={activeTab === "list"}
             >
               <ShoppingCart size={20} />
               <span className="font-medium">Lista</span>
             </button>
             <button
               onClick={() => setActiveTab("history")}
-              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all ${
-                activeTab === "history"
+              className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-md transition-all ${activeTab === "history"
                   ? "bg-emerald-600 text-white shadow-lg"
                   : "text-zinc-400 hover:text-zinc-300"
-              }`}
+                }`}
+              role="tab"
+              aria-pressed={activeTab === "history"}
+              aria-selected={activeTab === "history"}
             >
               <History size={20} />
               <span className="font-medium">Histórico</span>
