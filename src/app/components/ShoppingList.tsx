@@ -198,7 +198,7 @@ export function ShoppingList() {
 
                     <button
                       onClick={() => removeItem(item.id)}
-                      className="p-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors opacity-0 group-hover:opacity-100"
+                      className="hidden sm:block p-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors opacity-0 group-hover:opacity-100"
                       title="Remover item"
                     >
                       <Trash2 size={20} />
