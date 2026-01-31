@@ -8,8 +8,10 @@
     "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "dev": "vite",
     "build": "vite build",
+    "build:docker": "vite build",
+    "build:gh-pages": "VITE_BASE_PATH=/shop-list/ vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run build:gh-pages && gh-pages -d build",
     "format": "prettier 'src/**/*.{js,jsx,ts,tsx,json,css,md}' --write"
   },
   "dependencies": {

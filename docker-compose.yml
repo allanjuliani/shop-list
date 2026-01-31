@@ -1,0 +1,15 @@
+services:
+  shop-list:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    container_name: shop-list-app
+    restart: unless-stopped
+    networks:
+      - shop-list-network
+
+networks:
+  shop-list-network:
+    driver: bridge

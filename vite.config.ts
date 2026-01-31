@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/shop-list/',
+  base: process.env.VITE_BASE_PATH || '/',
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
   },
