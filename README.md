@@ -13,6 +13,10 @@ A modern shopping list application built with **React**, **Vite**, **TailwindCSS
 
 ---
 
+https://allanjuliani.github.io/shop-list/
+
+---
+
 ## ✨ Features
 
 - ✅ Add and remove items from the list
