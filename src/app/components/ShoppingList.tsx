@@ -103,7 +103,7 @@ export function ShoppingList() {
                 <div
                   id={suggestionListId}
                   role="listbox"
-                  className="absolute z-10 w-full mt-2 bg-zinc-800 border border-zinc-700 rounded-lg shadow-lg max-h-60 overflow-y-auto"
+                  className="absolute z-50 w-full mt-2 bg-zinc-800 border border-zinc-700 rounded-lg shadow-lg max-h-60 overflow-y-auto"
                 >
                   {suggestions.map((item, index) => (
                     <button
